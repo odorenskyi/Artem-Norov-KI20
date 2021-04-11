@@ -1,8 +1,9 @@
 # depslib dependency file v1.0
-1618000832 source:d:\ggg\artem-norov-kb20\lab08\prj\testdriver\main.cpp
+1618170577 source:d:\ggg\artem-norov-kb20\lab08\prj\testdriver\main.cpp
 	<iostream>
 	<cmath>
 	"ModulesNorov.h"
+	<stdio.h>
 
-1617999067 d:\ggg\artem-norov-kb20\lab08\prj\modulesnorov.h
+1618002667 d:\ggg\artem-norov-kb20\lab08\prj\modulesnorov.h
 

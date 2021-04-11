@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cmath>
 #include "ModulesNorov.h"
+#include<stdio.h>
+
 using namespace std;
 
 int main()
@@ -19,5 +21,6 @@ int main()
             cout << "Status: failed = " << result << endl;
         }
     }
+    getchar();
     return 0;
 }
