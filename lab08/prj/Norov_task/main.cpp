@@ -2,6 +2,7 @@
 #include "ModulesNorov.h"
 #include <windows.h>
 #include <locale.h>
+#include  <stdio.h>
 
 using namespace std;
 
@@ -31,7 +32,7 @@ int main()
     cin >> a;
     cout << "”ведiть b: ";
     cin >> b;
-    cout << "a + 5 == b + 2: " << boolalpha << (a + 5 == b + 2) << endl;
+    cout << "a + 5 > b + 2: " << boolalpha << (a + 5 > b + 2) << endl;
     cout << "x у дес€тковiй системi = " << dec << x << endl;
     cout << "x у шiстнадц€тковiй  системi = " << hex << x << endl;
     cout << "x у дес€тковiй системi = " << dec << y << endl;
@@ -40,4 +41,6 @@ int main()
     cout << "x у шiстнадц€тковiй  системi = " << hex << z << endl;
     S = s_calculation(x, y, z);
     cout << "\n S = " << s_calculation(x, y, z) << endl;
+    system("pause");
+    return 0;
 }
