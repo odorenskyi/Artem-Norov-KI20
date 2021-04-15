@@ -2,7 +2,7 @@
 #include "ModulesNorov.h"
 #include <windows.h>
 #include <locale.h>
-#include  <stdio.h>
+#include <stdio.h>
 
 using namespace std;
 
