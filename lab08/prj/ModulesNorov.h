@@ -1,11 +1,12 @@
 #ifndef MODULESNOROV_H_INCLUDED
 #define MODULESNOROV_H_INCLUDED
+#include <string>
 
 float s_calculation(float x, float y, float z);
 
 double Beaufortmark(double);
 
-int Helmetsize(int length);
+std::string Helmetsize(std::string length);
 
 int BinD15(int N);
 

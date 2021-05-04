@@ -44,47 +44,50 @@ double Beaufortmark(double W){
     }
     return W;
 }
-int Helmetsize(int length){
-    char sizesh = '        ';
-    if (length == 53 || length == 54){
-        sizesh = 'XS';
-        return (char)sizesh;
-    }else if (length == 55 || length == 56){
-        sizesh = 'S';
-        return (char)sizesh;
-    }else if (length == 57 || length == 58){
-        sizesh = 'M';
-        return (char)sizesh;
-    }else if (length == 59 || length == 60){
-        sizesh = 'L';
-        return (char)sizesh;
-    }else if (length == 61 || length == 62){
-        sizesh = 'XL';
-        return (char)sizesh;
-    }else{
-        sizesh = 'Wrong size';
-        return (char)sizesh;
+std::string  Helmetsize(std::string length){
+    std::string sizesh;
+    int d = atoi(length.c_str());
+    if (d == 53 || d == 54){
+        sizesh = "XS";
+        return sizesh;
+    }
+    if (d == 55 || d == 56){
+        sizesh = "S";
+        return sizesh;
+    }
+    if (d == 57 || d == 58){
+        sizesh = "M";
+        return sizesh;
+    }
+    if (d == 59 || d == 60){
+        sizesh = "L";
+        return sizesh;
+    }
+    if (d == 61 || d == 62){
+        sizesh = "XL";
+        return sizesh;
+    }
+    if(d > 62 || d < 53){
+        sizesh = "E";
+        return sizesh;
     }
 }
 
 int BinD15(int N){
-    int mask_1 = 0b00000000000000000000000000000001;
-    int mask_2 = 0b00000000000000000000000000000001;
-    int Zerocount = 0;
-    int Onecount = 0;
-    for(int i = 0; i < (log2(N)); i++){
-        if(!(N & mask_1))
-            Zerocount++;
-        else{
-            Onecount++;
-            mask_1 <<= 1;
+    int result = 0;
+    bool flag = false;
+    for (int n=sizeof(int)*8-1; n>-1; n--)  {
+        if((N>>n)&1)
+            if(!flag) {
+                flag = true;
+            }
+        if (flag){
+            if((N>>15)&1){
+                result += ((N>>n)&1)? 1 : 0;
+            }else{
+                result += ((N>>n)&1)? 0 : 1;
+            }
         }
     }
-    if(!(N & (mask_2 << 15))){
-        cout << "Кiлькiсть двiйкових нулiв = ";
-        return Zerocount;
-    }else{
-        cout << "Кiлькiсть двiйкових одиниць = ";
-        return Onecount;
-    }
+    return result;
 }

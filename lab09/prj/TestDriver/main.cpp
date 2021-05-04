@@ -19,8 +19,9 @@ int main()
         }
     }
     cout << "\nTask 9.2:" << endl;
-    int length[12]={53,54,55,56,57,58,59,60,61,62,63,51};
-    char sizeh[12]={'XS','XS','S','S','M','M','L','L','XL','XL','Wrong size','Wrong size'};
+    string length[12]={"53","54","55","56","57","58","59","60","61","62","63","51"};
+    string sizeh[12]={"XS","XS","S","S","M","M","L","L","XL","XL","E","E"};
+
     for(int i = 0;i < 12;i++){
         if(Helmetsize(length[i]) == sizeh[i]){
             cout << "Status: passed" << endl;
@@ -30,13 +31,13 @@ int main()
         }
     }
     cout << "\nTask 9.3:" << endl;
-    int N[10]={5236, 332, 4329214, 1000023, 99356, 3243552, 234235, 1111111, 599294, 862837};
-    int result3[10]={13, 9, 23, 17, 0, 22, 2, 3, 20, 19};
+    int n[10]={5236, 332, 4329214, 1000023, 99356, 3243552, 234235, 1111111, 599294, 862837};
+    int result3[10]={7, 5, 11, 9, 6, 12, 12, 10, 9, 9};
     for(int i = 0;i < 10;i++){
-        if(BinD15(N[i]) == result3[i]){
+        if(BinD15(n[i]) == result3[i]){
             cout << "Status: passed" << endl;
         }
-        if(BinD15(N[i]) != result3[i]){
+        if(BinD15(n[i]) != result3[i]){
             cout << "Status: failed" << endl;
         }
     }

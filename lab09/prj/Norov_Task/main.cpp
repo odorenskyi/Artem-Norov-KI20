@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <locale.h>
 #include <stdio.h>
+#include <string>
 
 using namespace std;
 
@@ -17,8 +18,8 @@ void dev_information()
 
 int main()
 {
-    int x, y, z, N;
-    float length, W;
+    int x, y, z, length;
+    float W;
     char input = ' ';
     setlocale(LC_ALL, "Ukr");
     dev_information();
@@ -90,23 +91,25 @@ int main()
                     cin >> length;
                 }
             }while (length < 53 || length > 62);
-            cout << "\nРозмiр шолому = " << (char)Helmetsize(length) << endl << endl;
+            std::string s = std::to_string(length);
+            cout << "\nРозмiр шолому = " << Helmetsize(s) << endl << endl;
         }else if(input == '3'){
-            int mask_2 = 0b00000000000000000000000000000001;
+                int n = 0;
                 cout << "\nВведiть цiле число вiд 0 до 10008000: ";
-                cin >> N;
+                cin >> n;
             do{
-                if(N < 0 || N > 10008000){
+                if(n < 0 || n > 10008000){
                     cout << "Некоректно введенi данi, N має бути не бiльше нiж 10008000 та меншим нiж 0" << endl;
                     cout << "\nВведiть цiле число вiд 0 до 10008000: ";
-                    cin >> N;
+                    cin >> n;
                 }
-            }while (N < 0 || N > 10008000);
-            if(!(N & (mask_2 << 15))){
-                cout << "Кiлькiсть двiйкових нулiв = " << BinD15(N) << endl << endl;
+            }while (n < 0 || n > 10008000);
+            if((n>>15)&1){
+                cout << "Кiлькiсть двiйкових одиниць = " << BinD15(n) << endl << endl;
             }else{
-                cout << "Кiлькiсть двiйкових одиниць = " << BinD15(N) << endl << endl;
+                cout << "Кiлькiсть двiйкових нулiв = " << BinD15(n) << endl << endl;
             }
+
         }else if(input == 't' || input == 'T' || input == 'C'){
             break;
         }else {
