@@ -31,6 +31,10 @@ void Task10_1()
     int ArtCounter = 0;
     fout.open(file_1);
     fin.open(file_2);
+    if (!fin.is_open()){
+        cout << "Помилка пiд час вiдкриття файлу, для роботи застосунка не виявленно файла \"OutFile.txt\"" << endl;
+        system("pause");
+    }
     if (!fout.is_open()){
         cout << "Помилка пiд час вiдкриття файлу" << endl;
     }else{

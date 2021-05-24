@@ -8,7 +8,6 @@
 using namespace std;
 
 
-
 string readFile(const string& fileName)
 {
     ifstream f(fileName);
@@ -30,8 +29,12 @@ void Task10_1()
     int ArtCounter = 0;
     fout.open(file_1);
     fin.open(file_2);
+    if (!fin.is_open()){
+        cout << "Помилка пiд час вiдкриття файлу, для роботи застосунка не виявленно файла \"OutFile.txt\"" << endl;
+        system("pause");
+    }
     if (!fout.is_open()){
-        cout << "Помилка пiд час вiдкриття файлу" << endl;
+        cout << "Помилка пiд час вiдкриття файлу, для роботи застосунка не виявленно файла \"InFile.txt\"" << endl;
     }else{
         fout << "Розробник: Норов Артем Центральноукраїнський нацiональний технiчний унiверситет Місто Кропивницький, Україна 2021";
         while(!fin.eof()){
